@@ -111,6 +111,7 @@ body .left .content form .input_box {
   width: 150%;
   height: 70px;
   margin: 50px auto;
+  margin-bottom: 60px;
   margin-left: -10%;
 }
 
@@ -154,6 +155,10 @@ body .left .content form .input_box input:hover {
   border: 1px solid #4066a5;
   -webkit-box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
           box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+}
+
+body .left .content form .input_box .msg {
+  display: inline-block;
 }
 
 body .left .content .container {
@@ -327,6 +332,7 @@ body .right {
   body .left .content form .input_box {
     width: 100%;
     margin: 20px auto;
+    margin-bottom: 40px;
   }
   body .left .content form .input_box input {
     padding: 18px 19px;
@@ -336,6 +342,8 @@ body .right {
   }
   body .left .content .icons {
     width: 80%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     margin: 20px auto;
   }
   body .right {
