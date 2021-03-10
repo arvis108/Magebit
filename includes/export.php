@@ -7,8 +7,10 @@ if (isset($_POST['export'])) {
     $query = "SELECT * FROM emails WHERE";
     $data = $_POST['data'];
     foreach ($data as $value) {
+        //creating query to get all selected email data
         $query .= ' email_id = ? or';
     }
+    //removes useless 'or' at query end
     $query = substr_replace($query, "", -3);
     $stmt = $conn->prepare($query);
     $stmt->execute($data); 

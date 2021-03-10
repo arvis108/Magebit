@@ -8,11 +8,7 @@ $color5:#F2F5FA;
     @content;
   }
 }
-@mixin laptop {
-  @media (max-width: 980px) {
-    @content;
-  }
-}
+
 *{
     margin:0;
     padding: 0;
@@ -20,38 +16,43 @@ $color5:#F2F5FA;
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-.column{
-    float: left;
-    background: linear-gradient(180deg, #ffffff 0%, $color5 100%);
+  .row{
+    display: flex;
+    width: 1920px;
   }
   .hidden{
     display: none !important;
   }
   .left {
-    width: 35%;
+    flex: 680px;
     height: 1080px;
+    align-items: center;
+    justify-content: center;
     .navigation-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 10vh;
-        width: 90%;
-        margin: 50px auto;
+      width: 80%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 103px auto;
+      padding-left: 15.5px;
         .logo{
             display: flex;
             justify-content:left;
-            flex: 0.7;
             align-items: flex-end;
-            padding-bottom: 20px;
+            padding-bottom: 16px;
+            .pineaple{
+              margin-left: 15px;
+              margin-bottom: 4px;
+            }
         }
         ul {
             display: flex;
-            justify-content: space-between;
-            float: right;
-            flex: 1.4;
+            justify-content:flex-start;
+            margin-right: 49px;
             li {
                 display: inline-block;
-                padding-left: 20px;
+                padding-left: 32px;
                 a {
                     color: $smallText;
                     text-decoration: none;
@@ -64,9 +65,9 @@ body{
           }
       }
       .content{
-        width: 75%;
-        margin: auto;
-        margin-top: 160px;
+        width: 80%;
+        margin-left: 125px;
+        margin-top: 226px;
         &.margins{
           margin-top: 110px;
         }
@@ -80,20 +81,22 @@ body{
               margin-bottom: 15px;
               color: $header;
           }
-          p{         
+          p{      
+              margin-top: 3px;   
               font-size: 16px;
               line-height: 28px;
               color: $smallText;
+              margin-right: 180px;
           }
         }
         form{
           .input_box {
               position: relative;
-              width: 150%;
+              width: 121%;
               height: 70px;
               margin: 50px auto;
               margin-bottom: 60px;
-              margin-left: -10%;
+              margin-left: -7%;
               
               .myButton{
                 border: none;
@@ -101,7 +104,7 @@ body{
                   position: absolute;
                   cursor: pointer;
                   top: 43%;
-                  right: 5%;
+                  right: 6%;
                 }
               }
               
@@ -137,6 +140,7 @@ body{
             }
         }
         .container{
+          margin-top: -6px;
           display: flex;
           align-items: center;
           .cb {
@@ -170,12 +174,13 @@ body{
           background: $color4;
         }
         .icons{
-          width: 60%;
+          width: 50%;
           height: 46px;
           margin: 50px auto;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-around;
+          margin-left: 65px;
           a {
               width: 46px;
               height: 100%;
@@ -233,19 +238,21 @@ body{
       
   }
   .right {
-    height: 100%;
-    width: 65%;
+    flex: 1240px;
+    height: 1080px;
     background-image: url(../images/image_summer.png);
-    min-height: 1080px;
   }
   @include mobile{
+    .row{
+      width: auto;
+    }
     .left{
       width: 100%;
       background-image: url(../images/image_summer.png);
       background-size: cover;
       background-repeat: no-repeat;
       .navigation-bar {
-        padding-top: 10px;
+        height: 66px;
         background-color: #ffffff;
         position: relative;
         margin: 0px auto;
@@ -258,8 +265,7 @@ body{
             }
         } 
         ul {
-          margin-right: 20px;
-          flex: 2;
+          margin-right: 21px;
           li {
               a {
                   font-size: 14px;
@@ -271,13 +277,17 @@ body{
         background-color: #ffffff;
         position: relative;
         width: 90%;
+        margin: 0 auto;
+        margin-top: 254px;
         padding:10px 20px;
         .teksts{
           h1{
+            margin-top: 30px;
               font-size: 24px;
           }
           p{         
               font-size: 14px;
+              margin-right: 100px;
               line-height: 26px;
           }
         }   
@@ -295,7 +305,7 @@ body{
           margin: 20px auto;
         }
         .icons{
-          width: 80%;
+          width: 70%;
           justify-content: space-around;
           margin: 20px auto;
         }
@@ -304,17 +314,6 @@ body{
     }
     .right{
       display: none;
-    }
-  }
-  @include laptop{
-    .left{
-      .logo{
-        margin-left: 20px;
-        flex: 0.5;
-          .pineaple{
-            display: none;
-          }
-      } 
     }
   }
 }

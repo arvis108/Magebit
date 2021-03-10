@@ -16,6 +16,7 @@ session_start();
     <title>Magebit Test</title>
 </head>
 <body>
+    <div class="row">
     <div class="column left">
         <div class="navigation-bar">
             <div class="logo">
@@ -47,15 +48,17 @@ session_start();
                     <p class="msg"><?php
                     if(isset($_SESSION['errors'])){
                         $array = $_SESSION['errors'];
-                        foreach($array as $val) {
-                            echo $val.'<Br>';
-                          }
-                          unset($_SESSION['errors']);
+                        // echo all errors at once
+                        // foreach($array as $val) {
+                        //     echo $val.'<Br>';
+                        //   }
+                        echo $array[0];
+                        unset($_SESSION['errors']);
                     }elseif(isset($_GET['error'])) {
                         echo $_GET['error'];
                     } else{
                         echo '';
-                    }?></p> 
+                    }?></p>
                     
                 </div>
                 <div class="container" id="cont">
@@ -115,5 +118,6 @@ session_start();
             });      
     </script>
     <script src="./includes/code.js"></script>
+    </div>
 </body>
 </html>

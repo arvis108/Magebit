@@ -6,10 +6,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body .column {
-  float: left;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#F2F5FA));
-  background: linear-gradient(180deg, #ffffff 0%, #F2F5FA 100%);
+body .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1920px;
 }
 
 body .hidden {
@@ -17,11 +18,21 @@ body .hidden {
 }
 
 body .left {
-  width: 35%;
+  -webkit-box-flex: 680px;
+      -ms-flex: 680px;
+          flex: 680px;
   height: 1080px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .left .navigation-bar {
+  width: 80%;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,9 +42,8 @@ body .left .navigation-bar {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 10vh;
-  width: 90%;
-  margin: 50px auto;
+  margin: 103px auto;
+  padding-left: 15.5px;
 }
 
 body .left .navigation-bar .logo {
@@ -43,31 +53,30 @@ body .left .navigation-bar .logo {
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
-  -webkit-box-flex: 0.7;
-      -ms-flex: 0.7;
-          flex: 0.7;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+body .left .navigation-bar .logo .pineaple {
+  margin-left: 15px;
+  margin-bottom: 4px;
 }
 
 body .left .navigation-bar ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  float: right;
-  -webkit-box-flex: 1.4;
-      -ms-flex: 1.4;
-          flex: 1.4;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 49px;
 }
 
 body .left .navigation-bar ul li {
   display: inline-block;
-  padding-left: 20px;
+  padding-left: 32px;
 }
 
 body .left .navigation-bar ul li a {
@@ -81,9 +90,9 @@ body .left .navigation-bar ul li a:hover {
 }
 
 body .left .content {
-  width: 75%;
-  margin: auto;
-  margin-top: 160px;
+  width: 80%;
+  margin-left: 125px;
+  margin-top: 226px;
 }
 
 body .left .content.margins {
@@ -101,18 +110,20 @@ body .left .content .teksts h1 {
 }
 
 body .left .content .teksts p {
+  margin-top: 3px;
   font-size: 16px;
   line-height: 28px;
   color: #6A707B;
+  margin-right: 180px;
 }
 
 body .left .content form .input_box {
   position: relative;
-  width: 150%;
+  width: 121%;
   height: 70px;
   margin: 50px auto;
   margin-bottom: 60px;
-  margin-left: -10%;
+  margin-left: -7%;
 }
 
 body .left .content form .input_box .myButton {
@@ -123,7 +134,7 @@ body .left .content form .input_box .myButton img {
   position: absolute;
   cursor: pointer;
   top: 43%;
-  right: 5%;
+  right: 6%;
 }
 
 body .left .content form .input_box .line {
@@ -162,6 +173,7 @@ body .left .content form .input_box .msg {
 }
 
 body .left .content .container {
+  margin-top: -6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,7 +219,7 @@ body .left .content .h-line {
 }
 
 body .left .content .icons {
-  width: 60%;
+  width: 50%;
   height: 46px;
   margin: 50px auto;
   display: -webkit-box;
@@ -216,9 +228,9 @@ body .left .content .icons {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 65px;
 }
 
 body .left .content .icons a {
@@ -278,13 +290,17 @@ body .left .content .icons .youtube:focus {
 }
 
 body .right {
-  height: 100%;
-  width: 65%;
+  -webkit-box-flex: 1240px;
+      -ms-flex: 1240px;
+          flex: 1240px;
+  height: 1080px;
   background-image: url(../images/image_summer.png);
-  min-height: 1080px;
 }
 
 @media (max-width: 800px) {
+  body .row {
+    width: auto;
+  }
   body .left {
     width: 100%;
     background-image: url(../images/image_summer.png);
@@ -292,7 +308,7 @@ body .right {
     background-repeat: no-repeat;
   }
   body .left .navigation-bar {
-    padding-top: 10px;
+    height: 66px;
     background-color: #ffffff;
     position: relative;
     margin: 0px auto;
@@ -308,10 +324,7 @@ body .right {
     display: none;
   }
   body .left .navigation-bar ul {
-    margin-right: 20px;
-    -webkit-box-flex: 2;
-        -ms-flex: 2;
-            flex: 2;
+    margin-right: 21px;
   }
   body .left .navigation-bar ul li a {
     font-size: 14px;
@@ -320,13 +333,17 @@ body .right {
     background-color: #ffffff;
     position: relative;
     width: 90%;
+    margin: 0 auto;
+    margin-top: 254px;
     padding: 10px 20px;
   }
   body .left .content .teksts h1 {
+    margin-top: 30px;
     font-size: 24px;
   }
   body .left .content .teksts p {
     font-size: 14px;
+    margin-right: 100px;
     line-height: 26px;
   }
   body .left .content form .input_box {
@@ -341,24 +358,12 @@ body .right {
     margin: 20px auto;
   }
   body .left .content .icons {
-    width: 80%;
+    width: 70%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     margin: 20px auto;
   }
   body .right {
-    display: none;
-  }
-}
-
-@media (max-width: 980px) {
-  body .left .logo {
-    margin-left: 20px;
-    -webkit-box-flex: 0.5;
-        -ms-flex: 0.5;
-            flex: 0.5;
-  }
-  body .left .logo .pineaple {
     display: none;
   }
 }
